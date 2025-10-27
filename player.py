@@ -17,26 +17,30 @@ class Player:
 
     def pickup(self):
         foo = self.deck.deck[0]
+        print(f"You have picked up a {foo}")
         if foo == "Exploding Kitten":
             self.explode()
             print("You defuse the Exploding Kitten")
         else:
             self.hand.append(self.deck.deck[0])
             del self.deck.deck[0]
-        return foo
+
 
     def take_turn(self, other):
-        self.drawed=False
-        while self.drawed == False:
+        if self.drawed == 0:
+            self.drawed=1
+        while self.drawed != 0:
+            print()
             choice = input("Would you like to Play, See hand or Draw?\nP/S/D: ")
             if choice == "D":
-                bar = self.pickup()
-                print(f"You picked up a {bar}!")
-                self.drawed=True
+                self.pickup()
+                self.drawed-=1
+
             if choice == "P":
                 playchoice = int(input("At what position is the card you wish to play?"))
                 cardtype = self.hand[playchoice]
                 card = Card(cardtype)
                 card.played(self, other)
+            
             if choice == "S":
                 print(self.hand)
