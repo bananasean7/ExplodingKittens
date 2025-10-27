@@ -23,10 +23,13 @@ Skip: Skip your turn.
 
 Favor: Other player gives you a card of THEIR choice.
 
+Attack: Ends your turn and makes the other player have to take TWO turns.
+
 
 Thanks for reading and let me know if you find any bugs or have suggestions.
 
 <img width="2400" height="1350" alt="image" src="https://github.com/user-attachments/assets/b38005b7-825a-425a-b4b2-7774a6a38028" />
+
 
 
 
