@@ -20,8 +20,10 @@ You pick up a card, and if it's an exploding kitten, you either play a defuse (w
 There are two cards that help you avoid the exploding kitten in the game right now:
 
 Skip: Skip your turn.
+
 Favor: Other player gives you a card of THEIR choice.
 
 
 Thanks for reading and let me know if you find any bugs or have suggestions.
+
 
