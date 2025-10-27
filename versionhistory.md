@@ -1,3 +1,13 @@
+Current problems: 
+
+Dying works, but not very well.
+
+Only three cards.
+
+Playing cards feels weird as you have to remember positions.
+
+
+
 Version 1.0
 - Added Skips and Favors.
 - Released Project.
