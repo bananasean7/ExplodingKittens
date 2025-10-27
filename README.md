@@ -8,7 +8,7 @@
 **This is not finished**
 
 Current problems: 
-No try/except, therefore making it so that if you try to play a card tha does not exist you are Fecked.
+No try/except, therefore making it so that if you try to play a card tha does not exist you are fecked.
 Dying works, but not very well.
 Only two cards.
 Playing cards feels weird as you have to remember positions.
@@ -25,6 +25,8 @@ Favor: Other player gives you a card of THEIR choice.
 
 
 Thanks for reading and let me know if you find any bugs or have suggestions.
+
+<img width="2400" height="1350" alt="image" src="https://github.com/user-attachments/assets/b38005b7-825a-425a-b4b2-7774a6a38028" />
 
 
 
