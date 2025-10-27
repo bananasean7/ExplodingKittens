@@ -7,11 +7,6 @@
 
 **This is not finished**
 
-Current problems: 
-Dying works, but not very well.
-Only three cards.
-Playing cards feels weird as you have to remember positions.
-
 If you do not know how to play exploding kittens, here is a short description:
 
 Basically, it's russian roulette, with kittens. 
@@ -24,10 +19,15 @@ Favor: Other player gives you a card of THEIR choice.
 
 Attack: Ends your turn and makes the other player have to take TWO turns.
 
+Current problems: 
+Dying works, but not very well.
+Only three cards.
+Playing cards feels weird as you have to remember positions.
 
 Thanks for reading and let me know if you find any bugs or have suggestions.
 
 <img width="2400" height="1350" alt="image" src="https://github.com/user-attachments/assets/b38005b7-825a-425a-b4b2-7774a6a38028" />
+
 
 
 
