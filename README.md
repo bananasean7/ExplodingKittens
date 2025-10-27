@@ -1,5 +1,9 @@
 WELCOME TO EXPLODY KITTENS IN PYTHON!
-To install, just download all the files (make sure they're in the same folder) and run explodykittens.py
+
+**To install, just download all the files (make sure they're in the same folder) and run explodykittens.py in your editor, or if you don't have but have python** **installed then do:**
+
+**py explodykittens.py if on windows or**
+**python explodykittens.py if on anything else.**
 
 **This is not finished**
 
@@ -20,3 +24,4 @@ Favor: Other player gives you a card of THEIR choice.
 
 
 Thanks for reading and let me know if you find any bugs or have suggestions.
+
