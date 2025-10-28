@@ -23,3 +23,8 @@ Version 1.2
 - Added See the Futures.
 - Reworked attack system.
 - QOL changes.
+
+Version 1.3
+- Added Nopes (Well that was hell).
+- A bit more QOL.
+- Realised how difficult it's gonna be to add more than three players!
