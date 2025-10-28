@@ -1,8 +1,9 @@
 from random import choice
 
 class Card:
-    def __init__(self, type):
+    def __init__(self, type, deck):
         self.type = type
+        self.deck = deck
 
     def played(self, player, other):
         if self.type == "Skip":
@@ -13,6 +14,7 @@ class Card:
         
         if self.type == "Favor":
             try:
+                print(other.hand)
                 taken_card = int(input("(This choice is for the player the card was played against)\nAt what position would you like to give away a card: "))
             except ValueError:
                 print("That is not a number!")
@@ -37,9 +39,17 @@ class Card:
             attacklist = ["YOU SUMMON THE GREAT AND ALMIGHTY CATTERWOCKY, DESTROYER OF WORLDS!", "YOU FIRE THE DEVASTATING CRAB-O-PULT",
                           "YOU RELEASE THE TORTURE BUNNIES!"]
             print(choice(attacklist))
-            print("Player two must now take two turns!")
+            print("The other player must now take two turns!")
             other.drawed = 2
             player.drawed = 0
+        
+        if self.type == "See The Future":
+            stflist = ["You summon the Mantis Shrimp!", "You rub the belly of a Pig-A-Corn!", 
+                       "You deploy the Special Operations Bunnies!"]
+            print(stflist)
+            print("You see the future! The next three cards are:")
+            print(self.deck[0:3])
+            
 
 if __name__ == "__main__":
     print("THIS IS THE WRONG FILE!\nRun explodykittens.py instead!")

@@ -4,12 +4,10 @@ from deck import Deck
     
 def main():
     deck1 = Deck()
-    player1 = Player(deck1)
-    player2 = Player(deck1)
+    player1 = Player(deck1, 1)
+    player2 = Player(deck1, 2)
     while True:
-        print("It's Player one's go!")
         player1.take_turn(player2)
-        print("It's Player two's go!")
         player2.take_turn(player1)
     print("THE GAME IS OVER")
 

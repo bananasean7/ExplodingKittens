@@ -1,10 +1,11 @@
 from cards import Card
 
 class Player:
-    def __init__(self, deck):
+    def __init__(self, deck, number):
         self.hand = ["Defuse"]
         self.deck = deck
         self.drawed = False
+        self.number = number
 
     def explode(self):
         if "Defuse" in self.hand:
@@ -27,6 +28,7 @@ class Player:
 
 
     def take_turn(self, other):
+        print(f"It's player {self.number}'s go!")
         if self.drawed == 0:
             self.drawed=1
         while self.drawed != 0:
@@ -37,9 +39,10 @@ class Player:
                 self.drawed-=1
 
             if choice == "P":
-                playchoice = int(input("At what position is the card you wish to play?"))
+                print(self.hand)
+                playchoice = int(input("At what position is the card you wish to play?  "))
                 cardtype = self.hand[playchoice]
-                card = Card(cardtype)
+                card = Card(cardtype, self.deck)
                 card.played(self, other)
             
             if choice == "S":
