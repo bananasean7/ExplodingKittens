@@ -4,7 +4,6 @@ Dying works, but not very well.
 
 Only three cards.
 
-Playing cards feels weird as you have to remember positions.
 
 ***********************************************************************************************************************************************************************
 
@@ -22,4 +21,4 @@ Version 1.1
 Version 1.2
 - Added See the Futures.
 - Reworked attack system.
-- QOL changes.
+- QOL changes, including hand is now printed so you don't need to remember positions!
