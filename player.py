@@ -33,7 +33,7 @@ class Player:
             self.drawed=1
         while self.drawed != 0:
             print()
-            choice = input("Would you like to Play, See hand or Draw?\nP/S/D: ")
+            choice = input(f"Player {self.number}, Would you like to Play, See hand or Draw?\nP/S/D: ")
             if choice == "D":
                 self.pickup()
                 self.drawed-=1
@@ -42,8 +42,11 @@ class Player:
                 print(self.hand)
                 playchoice = int(input("At what position is the card you wish to play?  "))
                 cardtype = self.hand[playchoice]
-                card = Card(cardtype, self.deck)
+                card = Card(cardtype, self.deck, self, other)
                 card.played(self, other)
             
             if choice == "S":
                 print(self.hand)
+
+if __name__ == "__main__":
+    print("THIS IS THE WRONG FILE!\nRun explodykittens.py instead!")
