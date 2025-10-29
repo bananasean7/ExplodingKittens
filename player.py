@@ -2,7 +2,7 @@ from cards import Card
 
 class Player:
     def __init__(self, deck, number):
-        self.hand = ["Defuse"]
+        self.hand = ["Defuse", "Nope"]
         self.deck = deck
         self.drawed = False
         self.number = number
@@ -40,10 +40,13 @@ class Player:
 
             if choice == "P":
                 print(self.hand)
-                playchoice = int(input("At what position is the card you wish to play?  "))
-                cardtype = self.hand[playchoice]
-                card = Card(cardtype, self.deck, self, other)
-                card.played(self, other)
+                try:
+                    playchoice = int(input("At what position is the card you wish to play?  "))
+                    cardtype = self.hand[playchoice]
+                    card = Card(cardtype, self.deck, self, other)
+                    card.played()
+                except IndexError or ValueError:
+                    print("You can't play that!")
             
             if choice == "S":
                 print(self.hand)

@@ -27,3 +27,9 @@ Version 0.3
 - Added Nopes.
 - More QOL
 - Made adding multiplayer in the future a bit easier!
+
+Version 0.4
+- Reworked deck creation system, now deck cards are kept in a dictionary when first created.
+- FINALLY MADE NOPES NOT EXPLODE THE PROJECT WHEN YOU PLAY THEM!
+- Yet more qol, this time making it so that more than two players is now theoretically possible.
+- More try/excepts.

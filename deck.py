@@ -1,7 +1,8 @@
 from random import shuffle
 
 class Deck:
-    def __init__(self, cards = {"favors": 2, "skips": 3, "exps": 1, "attacks": 2, "stfs": 1, "nopes": 3}):
+    def __init__(self, cards = {"Favor": 2, "Skip": 3, "Exploding Kitten": 1, "Attack": 2, "See The Future": 1, 
+                                "Nope": 4}):
         self.deck = []
         for item in cards.keys():
             for value in range(0, cards[item]):
