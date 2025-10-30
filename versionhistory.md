@@ -33,3 +33,7 @@ Version 0.4
 - FINALLY MADE NOPES NOT EXPLODE THE PROJECT WHEN YOU PLAY THEM!
 - Yet more qol, this time making it so that more than two players is now theoretically possible.
 - More try/excepts.
+
+Version 0.5
+- Hopefully for the final time, reworked nopes.
+- Added the basis for cat cards, probably shouldn't release now but fixing nopes took SOOO long.

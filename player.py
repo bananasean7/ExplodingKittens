@@ -2,7 +2,7 @@ from cards import Card
 
 class Player:
     def __init__(self, deck, number):
-        self.hand = ["Defuse", "Nope"]
+        self.hand = ["Defuse", "Nope", "Nope", "Skip"]
         self.deck = deck
         self.drawed = False
         self.number = number
