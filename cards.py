@@ -51,7 +51,7 @@ class Card:
         print("You skipped!")
         self.p1.drawed = 0
     
-    def check_nope(self): # Player is the one playing the nope, other is the one receiving the nope.
+    def check_nope(self):
         while True:
             if "Nope" in self.p2.hand:
                 nchoice = input(f"Player {self.p2.number}, Would you like to play a nope?\nY/N:")
@@ -88,6 +88,9 @@ class Card:
             
             if self.type == "See The Future":
                 self.stf()
+        
+        foo = self.p1.hand.index(self.type)
+        self.p1.hand.pop(foo)
 
 class Cat_Card(Card):
     def __init__(self, type, p1, p2, deck):
@@ -95,11 +98,29 @@ class Cat_Card(Card):
         self.deck = deck
         self.p1 = p1
         self.p2 = p2
-        super().__init__(type, deck, p1, p2)       
+        super().__init__(type, p1, p2, deck)
+
+    def played(self):
+            combochoice = input("Would you like to do \nA: A two of a kind?\nOr\nB: A three of a kind?\nA/B: ")
+            if combochoice == "A":
+                try:
+                    card1_pos = self.p1.hand.index(self.type)
+                    card2_pos = self.p1.hand.index(self.type, card1_pos+1)
+                    self.p1.hand.pop(card1_pos)
+                    self.p1.hand.pop(card2_pos-1)
+                    nope_played = super().check_nope()
+
+                    if nope_played == False:
+                        print(f"Taking a card from Player {self.p2.number}...")
+                        given_card = choice(self.p2.hand)
+                        taken_card = self.p2.hand.index(given_card)
+                        self.p2.hand.pop(taken_card)
+                        self.p1.hand.append(given_card)
+                        print(f"A {given_card} has been taken!")
+                except ValueError or IndexError:
+                    print("You don't have two of the same card or your opponent has an empty hand!")
+            
 
 if __name__ == "__main__":
-    card = Cat_Card(1,2,3,4)
-
-
-
-    
+    card = Cat_Card()
+    card.played()
