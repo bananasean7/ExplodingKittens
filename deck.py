@@ -2,8 +2,9 @@ from random import shuffle
 #
 class Deck:
     # creating the deck
-    def __init__(self, cards = {"Favor": 2, "Skip": 3, "Exploding Kitten": 1, "Attack": 2, "See The Future": 1, 
-                                "Nope": 4, "Tacocat": 3, "Beard Cat": 3}):
+    def __init__(self, cards = {"Favor": 4, "Skip": 4, "Exploding Kitten": 2, "Attack": 4, "See The Future": 5, 
+                                "Nope": 5, "Tacocat": 4, "Beard Cat": 4, "Rainbow-Ralphing Cat": 4, "Hairy Potato Cat": 4, 
+                                "Defuse": 3}):
         self.deck = []
         for item in cards.keys():
             for value in range(0, cards[item]):

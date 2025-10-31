@@ -46,3 +46,10 @@ Version 0.7
     - At the moment, cat cards can only be played in double combos.
 - FIXED NOPES FOR THE LAST TIME.
 - The endless stream of QOL goes on and on...
+
+Version 0.8:
+- All the cat cards are now here!
+    - Added Rainbow-Ralphing Cat, Hairy Potato Cat and Catermelon.
+    - Added three of a kind combos with cat cards.
+- Realised I had 10 try/excepts when I only needed 2!
+- Hopefully the second last QOL, shuffles are to be added next along with a bit more refactoring!

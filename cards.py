@@ -15,20 +15,16 @@ class Card:
             print("That is not a number!")
             print("Taking the last card...")
             taken_card = -1
-            given_card = self.p2.hand[taken_card]
-        try:
-            given_card = self.p2.hand[taken_card]
-        except IndexError or ValueError:
-            print("You don't have a card there!")
-            print("Taking the last card...")
-            taken_card = -1
-            given_card = self.p2.hand[taken_card]
-
-        favorlist = ["You rub Peanut Butter on your belly!", "Your send an army of squirrels against your opponent!"]
-        print(choice(favorlist))
-        print(f"You received a {given_card}")
-        del self.p2.hand[taken_card]
-        self.p1.hand.append(given_card)
+        finally:
+            try:
+                given_card = self.p2.hand[taken_card]
+                favorlist = ["You rub Peanut Butter on your belly!", "Your send an army of squirrels against your opponent!"]
+                print(choice(favorlist))
+                print(f"You received a {given_card}")
+                del self.p2.hand[taken_card]
+                self.p1.hand.append(given_card)
+            except Exception:
+                print("Your opponent has an empty hand!")
     
     def attack(self):
         attacklist = ["YOU SUMMON THE GREAT AND ALMIGHTY CATTERWOCKY, DESTROYER OF WORLDS!", "YOU FIRE THE DEVASTATING CRAB-O-PULT",
@@ -117,8 +113,31 @@ class Cat_Card(Card):
                         self.p2.hand.pop(taken_card)
                         self.p1.hand.append(given_card)
                         print(f"A {given_card} has been taken!")
-                except ValueError or IndexError:
+                except Exception:
                     print("You don't have two of the same card or your opponent has an empty hand!")
+                
+            if combochoice == "B":
+                try:
+                    card1_pos = self.p1.hand.index(self.type)
+                    card2_pos = self.p1.hand.index(self.type, card1_pos+1)
+                    card3_pos = self.p1.hand.index(self.type, card2_pos+1)
+                    self.p1.hand.pop(card1_pos)
+                    self.p1.hand.pop(card2_pos-1)
+                    self.p1.hand.pop(card3_pos-2)
+                    nope_played = super().check_nope()
+
+                    if nope_played == False:
+                        cardchoice = input("What card would you like to take? (Use Title Case)\nCard: ")
+                        try:
+                            taken_card = self.p2.hand.index(cardchoice)
+                            self.p2.hand.pop(taken_card)
+                            self.p1.hand.append(cardchoice)
+                            print(f"A {cardchoice} has been taken!")
+                        except IndexError:
+                            print("Your opponent does not have that card!")
+                except Exception:
+                    print(Exception)
+                    print("You don't have three of the same card or your opponent has an empty hand!")
             
 
 if __name__ == "__main__":

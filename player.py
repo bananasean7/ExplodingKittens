@@ -4,11 +4,11 @@ from cards import Cat_Card
 class Player:
     def __init__(self, deck, number):
         # setting up player
-        self.hand = ["Defuse", "Tacocat", "Tacocat"]
         self.deck = deck
         self.drawed = False
         self.number = number
-        self.catlist = ["Tacocat", "Beard Cat"]
+        self.catlist = ["Tacocat", "Beard Cat", "Catermelon", "Hairy Potato Cat", "Rainbow-Ralphing Cat"]
+        self.hand = ["Defuse"]
 
     def explode(self):
         # explains itself
@@ -58,8 +58,8 @@ class Player:
                     else:
                         card = Cat_Card(cardtype, self.deck, self, other)
                         card.played()
-                except IndexError or ValueError:
-                    print("You can't play that!")
+                except Exception:
+                    print("You can't play that! (Your opponent may have an empty hand, or you may not have the correct cards)")
             
             if choice == "S":
                 print(self.hand)
