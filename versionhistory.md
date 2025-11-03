@@ -53,3 +53,9 @@ Version 0.8:
     - Added three of a kind combos with cat cards.
 - Realised I had 10 try/excepts when I only needed 2!
 - Hopefully the second last QOL, shuffles are to be added next along with a bit more refactoring!
+
+Version 1.0:
+- I'M DONE!
+- Added some more QOL!
+    - You now use regular human counting?
+- Refactored a bit, and tidied up the debug features.

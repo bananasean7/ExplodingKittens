@@ -50,7 +50,7 @@ class Player:
             if choice == "P":
                 print(self.hand)
                 try:
-                    playchoice = int(input("At what position is the card you wish to play?  "))
+                    playchoice = int(input("At what position is the card you wish to play?  ")) + 1
                     cardtype = self.hand[playchoice]
                     if not cardtype in self.catlist:
                         card = Card(cardtype, self.deck, self, other)

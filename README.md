@@ -5,7 +5,7 @@
 **```py explodykittens.py``` if on windows or**
 **```python explodykittens.py``` if on anything else.**
 
-**This is not finished**
+**This is now finished**
 
 If you do not know how to play exploding kittens, here is a short description:
 

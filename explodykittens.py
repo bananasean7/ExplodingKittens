@@ -12,7 +12,7 @@ def main():
     while True:
         player1.take_turn(player2)
         player2.take_turn(player1)
-    print("THE GAME IS OVER") # It'll be a long time before this function runs lol
+    print("THE GAME IS OVER") # It'll be a long time before this function runs 
 
 if __name__ == "__main__":
     main()

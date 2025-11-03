@@ -10,7 +10,7 @@ class Card:
     def favor(self):
         try:
             print(self.p2.hand)
-            taken_card = int(input("(This choice is for the player the card was played against)\nAt what position would you like to give away a card: "))
+            taken_card = int(input("(This choice is for the player the card was played against)\nAt what position would you like to give away a card: ")) + 1
         except ValueError:
             print("That is not a number!")
             print("Taking the last card...")
@@ -47,10 +47,15 @@ class Card:
         print("You skipped!")
         self.p1.drawed = 0
     
+    def shuffle(self):
+        shufflelist = ["The litter box of universes appears!", "The crabs invade!", "A cat steals your shorts!"]
+        print(choice(shufflelist))
+        self.deck.shuffle()
+    
     def check_nope(self):
         while True:
             if "Nope" in self.p2.hand:
-                nchoice = input(f"Player {self.p2.number}, Would you like to play a nope?\nY/N:")
+                nchoice = input(f"Player {self.p2.number}, Would you like to play a nope?\nY/N: ")
                 if nchoice == "Y":
                     nope_pos = self.p2.hand.index("Nope")
                     del self.p2.hand[nope_pos]
@@ -73,17 +78,21 @@ class Card:
         nope_played = self.check_nope()
 
         if nope_played == False:
-            if self.type == "Skip":
-                self.skip()
-            
-            if self.type == "Favor":
-                self.favor()
-                    
-            if self.type == "Attack":
-                self.attack()
-            
-            if self.type == "See The Future":
-                self.stf()
+            match self.type:
+                case "See The Future":
+                    self.stf()
+                
+                case "Skip":
+                    self.skip()
+
+                case "Favor":
+                    self.favor()
+                
+                case "Attack":
+                    self.attack()
+                
+                case "Shuffle":
+                    self.shuffle()
         
         foo = self.p1.hand.index(self.type)
         self.p1.hand.pop(foo)
