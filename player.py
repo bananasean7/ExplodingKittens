@@ -49,17 +49,14 @@ class Player:
 
             if choice == "P":
                 print(self.hand)
-                try:
-                    playchoice = int(input("At what position is the card you wish to play?  ")) + 1
-                    cardtype = self.hand[playchoice]
-                    if not cardtype in self.catlist:
-                        card = Card(cardtype, self.deck, self, other)
-                        card.played()
-                    else:
-                        card = Cat_Card(cardtype, self.deck, self, other)
-                        card.played()
-                except Exception:
-                    print("You can't play that! (Your opponent may have an empty hand, or you may not have the correct cards)")
+                playchoice = int(input("At what position is the card you wish to play?  ")) - 1
+                cardtype = self.hand[playchoice]
+                if not cardtype in self.catlist:
+                    card = Card(cardtype, self.deck, self, other)
+                    card.played()
+                else:
+                    card = Cat_Card(cardtype, self.deck, self, other)
+                    card.played()
             
             if choice == "S":
                 print(self.hand)

@@ -10,18 +10,18 @@ class Card:
     def favor(self):
         try:
             print(self.p2.hand)
-            taken_card = int(input("(This choice is for the player the card was played against)\nAt what position would you like to give away a card: ")) + 1
+            taken_card = int(input("(This choice is for the player the card was played against)\nAt what position would you like to give away a card: ")) - 1
         except ValueError:
             print("That is not a number!")
             print("Taking the last card...")
             taken_card = -1
         finally:
             try:
-                given_card = self.p2.hand[taken_card]
+                given_card = self.p2.hand[taken_card] # pyright: ignore[reportPossiblyUnboundVariable]
                 favorlist = ["You rub Peanut Butter on your belly!", "Your send an army of squirrels against your opponent!"]
                 print(choice(favorlist))
                 print(f"You received a {given_card}")
-                del self.p2.hand[taken_card]
+                del self.p2.hand[taken_card] # pyright: ignore[reportPossiblyUnboundVariable]
                 self.p1.hand.append(given_card)
             except Exception:
                 print("Your opponent has an empty hand!")
@@ -148,7 +148,3 @@ class Cat_Card(Card):
                     print(Exception)
                     print("You don't have three of the same card or your opponent has an empty hand!")
             
-
-if __name__ == "__main__":
-    card = Cat_Card()
-    card.played()
